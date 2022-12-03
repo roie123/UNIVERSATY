@@ -20,7 +20,14 @@ public class Car {
     private String _brand;
     private boolean _isManual;
 
-
+//constructors:
+    /*
+     * creates a new Car object 
+     * @param _id the id of car 
+     * @param _char the type of car
+     * @param _brand the brand of car
+     * @param _isManual whether the car is manual
+     */
     public Car(int _id, char _type, String _brand, boolean _isManual) {
         if (idValidation(_id)) {
             this._id = _id;
@@ -32,59 +39,92 @@ public class Car {
         this._brand = _brand;
         this._isManual = _isManual;
     }
-
+//constructors:
+    /*
+     * creates a new Car object 
+     * @param car the   car to create  
+    
+     */
     public Car(Car car) {
         this._id = car.getId();
         this._type = car.getType();
         this._isManual = car._isManual;
         this._brand = car.getBrand();
     }
-
+/**
+ * returns the id of the car
+ * @return
+ */
     public int getId() {
 
         return _id;
     }
-
+/**
+ * setting the  id  of  car
+ * @return void 
+ */
     public void setId(int _id) {
         if (idValidation(_id)) {
             this._id = _id;
         }
     }
-
+/**
+ * returns the type of car
+ * @return type
+ */
     public char getType() {
         return _type;
     }
-
+/**
+ * sets the type of car 
+ * @return void 
+ */
     public void setType(char _type) {
         this._type = _type;
     }
-
+/**
+ * returns the brand of brand 
+ * @return String brand 
+ */
     public String getBrand() {
         return _brand;
     }
-
+/**
+ * set the brand of the car 
+ * @return
+ */
     public void setBrand(String _brand) {
         this._brand = _brand;
     }
-
+/**
+ * gets isManual 
+ * @return boolean if the car isManual
+ */
     public boolean isManual() {
         return _isManual;
     }
-
+/**
+ * sets the manual attribute for the car
+ * @return void 
+ */
     public void setIsManual(boolean _isManual) {
         this._isManual = _isManual;
     }
 
 
-    /*
+    /**
     This method will check if the input id is valid and return true if it does
+    @param id the id of the car 
+    @return if the id is valid and return true if it does
      */
     private boolean idValidation(int id) {
         return id >= MIN_ID_VALUE && id <= DEFAULT_ID_VALUE;
     }
 
-    /*
+    /**
         This method will check if the input type is valid and return true if it does
+        @param char the input type  character 
+        @return boolean if the input type is valid and return true if it
          */
     private boolean isTypeValid(char type) {
         switch (type) {
@@ -94,8 +134,12 @@ public class Car {
         }
         return false;
     }
-
-    @Override
+     /**
+        This method will check if the input type is valid and return true if it does
+        @param char the input type  character 
+        @return boolean if the input type is valid and return true if it
+         */
+    
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -103,12 +147,11 @@ public class Car {
         return _id == car._id && _type == car._type && _isManual == car._isManual && Objects.equals(_brand, car._brand);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(_id, _type, _brand, _isManual);
-    }
-
-    @Override
+   
+/**
+        This method will represent the string value of the Car object 
+        @return String  value of the Car object
+         */
     public String toString() {
         if (_isManual) {
             return
@@ -117,7 +160,11 @@ public class Car {
                 "id:" + _id + " type:" + _type + " brand:'" + _brand + " gear:" + "auto";
 
     }
-
+/**
+        This method will check if the input car is better than the other car object
+        @param Car the car to check 
+        @return boolean if the original car is better than the other car    
+         */
     public boolean better(Car other) {
         if (this.equals(other)){
             return false;
