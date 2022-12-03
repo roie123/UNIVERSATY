@@ -21,10 +21,10 @@ public class Car {
     private boolean _isManual;
 
 //constructors:
-    /*
+    /**
      * creates a new Car object 
      * @param _id the id of car 
-     * @param _char the type of car
+     * @param _type the type of car
      * @param _brand the brand of car
      * @param _isManual whether the car is manual
      */
@@ -40,7 +40,7 @@ public class Car {
         this._isManual = _isManual;
     }
 //constructors:
-    /*
+    /**
      * creates a new Car object 
      * @param car the   car to create  
     
@@ -53,7 +53,7 @@ public class Car {
     }
 /**
  * returns the id of the car
- * @return
+ * @return the id of the car
  */
     public int getId() {
 
@@ -123,7 +123,7 @@ public class Car {
 
     /**
         This method will check if the input type is valid and return true if it does
-        @param char the input type  character 
+        @param type the input type  character
         @return boolean if the input type is valid and return true if it
          */
     private boolean isTypeValid(char type) {
@@ -136,7 +136,7 @@ public class Car {
     }
      /**
         This method will check if the input type is valid and return true if it does
-        @param char the input type  character 
+        @param o the input type  character
         @return boolean if the input type is valid and return true if it
          */
     
@@ -162,7 +162,7 @@ public class Car {
     }
 /**
         This method will check if the input car is better than the other car object
-        @param Car the car to check 
+        @param other the car to check
         @return boolean if the original car is better than the other car    
          */
     public boolean better(Car other) {

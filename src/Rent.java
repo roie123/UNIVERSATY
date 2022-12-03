@@ -15,7 +15,7 @@ public class Rent {
     private Date _pickDate;
     private Date _returnDate;
 //constructors:
-    /*
+    /**
      * creates a new Rent object
      * @param _name the name of the customer
      * @param _pickDate the date of the pick up 
@@ -37,7 +37,7 @@ public class Rent {
         }
     }
 //constructors:
-    /*
+    /**
      * creates a new Rent object from another Rent object 
      * @param other the other Rent object to create
      @return new Rent object 
@@ -49,7 +49,7 @@ public class Rent {
         this._pickDate = other._pickDate;
         this._returnDate = other._returnDate;
     }
- /*
+ /**
      * gets the name of the customer
      * returns the name of the customer
       
@@ -58,16 +58,16 @@ public class Rent {
     public String getName() {
         return _name;
     }
- /*
+ /**
      * sets the name of the customer
-     * @param name the name of the customer
+     * @param _name the name of the customer
      * returns the  name of the customer  
     
      */
     public void setName(String _name) {
         this._name = _name;
     }
- /*
+ /**
      * gets the car object
      * @return the car object
     
@@ -75,16 +75,16 @@ public class Rent {
     public Car getCar() {
         return car;
     }
- /*
+ /**
      * sets the car object 
-     * @param the car to set 
+     * @param car car to set
      * @return void 
     
      */
     public void setCar(Car car) {
         this.car = car;
     }
- /*
+ /**
      * gets the date of pickup
      * @return the pickDate 
     
@@ -92,9 +92,9 @@ public class Rent {
     public Date getPickDate() {
         return _pickDate;
     }
- /*
+ /**
      * sets the pickDate of the  Rent
-     * @param Date the pickup date 
+     * @param _pickDate the pickup date
      * @return void 
     
      */
@@ -104,7 +104,7 @@ public class Rent {
 
         }
     }
- /*
+ /**
      * get the returnDate of the Rent 
      * @return  the returnDate value
     
@@ -112,9 +112,9 @@ public class Rent {
     public Date getReturnDate() {
         return _returnDate;
     }
- /*
+ /**
      * sets the returnDate of the rental
-     * @param Date the return
+     * @param _returnDate the return
      * @return void  
     
      */
@@ -124,7 +124,7 @@ public class Rent {
 
         }
     }
- /*
+ /**
      * checking the validity of date
      * @param returnDate the given returnDate
      * @param pickDate the given    pickDate
@@ -135,9 +135,9 @@ public class Rent {
         return pickDate.before(returnDate) && returnDate.difference(pickDate) >= 1;
     }
 
- /*
+ /**
      * checking the other object is equal 
-     * @param other the other object
+     * @param o the other object
      * @return boolean if the other object is equal
     
      */
@@ -147,7 +147,7 @@ public class Rent {
         Rent rent = (Rent) o;
         return Objects.equals(_name, rent._name) && Objects.equals(car, rent.car) && Objects.equals(_pickDate, rent._pickDate) && Objects.equals(_returnDate, rent._returnDate);
     }
- /*
+ /**
      *checking how meny days
      * @return int the number of days passed
     
@@ -155,7 +155,7 @@ public class Rent {
     public int howManyDays() {
         return this._pickDate.difference(this._returnDate);
     }
- /*
+ /**
      * gets the price of the rental
      * @return the price of the rental 
     
@@ -176,9 +176,9 @@ public class Rent {
 
         return (int) totalPriceBeforeDiscount - (int) (discountForAWeek * numberOfFullWeeks);
     }
- /*
+ /**
      * gets the price for another Car
-     * @param Car the car to get the price for
+     * @param car the car to get the price for
      * @return the price  
     
      */
@@ -197,7 +197,7 @@ public class Rent {
         System.out.println("UPGRADE ::" + (totalPriceBeforeDiscount - (int) (discountForAWeek * numberOfFullWeeks)));
         return (int) totalPriceBeforeDiscount - (int) (discountForAWeek * numberOfFullWeeks);
     }
- /*
+ /**
      * upgrade the Rent to another Car 
      * @param newCar the car to upgrade to 
      * @return the difference in price

@@ -19,7 +19,7 @@ public class Date {
 
 
     //constructors:
-    /*
+    /**
      * creates a new Date object
      * @param _day the day in the month(1-31)
      * @param _month the month in the year
@@ -35,7 +35,7 @@ public class Date {
 
     }
 
-    /*
+    /**
     Copy Constructor
      */
     public Date(Date other) {
@@ -109,8 +109,12 @@ public class Date {
         }
     }
 
-    /*
+    /**
     this method checks if the day is valid using the whole date values
+     @param day the day
+     @param monthOfYear  the month
+     @param year the year
+     @return true if the input day is valid
      */
     public boolean checkIfDayIsValid(int day, int monthOfYear, int year) {
         boolean isALeapYear = checkIfLeapYear(year);
@@ -131,7 +135,11 @@ public class Date {
         return false;
     }
 
-    //this method checks for a leap year
+    /**
+     *     this method checks for a leap year
+     * @param year the year to check
+     * @return true if the year is a leap year
+     */
     public boolean checkIfLeapYear(int year) {
         boolean leap = false;
 
@@ -153,8 +161,10 @@ public class Date {
 
         return leap;
     }
-/*
+/**
 This method checks for the validity of the month , using day value and the year
+ *@param month the month to check
+ * @return true if the month is valid
  */
     public boolean checkIfMonthIsValid(int month) {
         if (month <= MAX_MONTH_VALUE && month >= MIN_MONTH_VALUE) {
